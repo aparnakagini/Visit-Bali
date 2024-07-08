@@ -14,7 +14,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/visit-bali">
       <div className="App">
         <Header />
         <Routes>
@@ -29,7 +29,7 @@ function App() {
           <Route path="/attractions" element={<Attractions />} />
           <Route path="/accommodation" element={<Accommodation />} />
           <Route path="/dining" element={<Dining />} />
-          <Route path="/confirmation" element={<Confirmation />} /> {/* New confirmation route */}
+          <Route path="/confirmation" element={<Confirmation />} />
         </Routes>
         <Footer />
       </div>
