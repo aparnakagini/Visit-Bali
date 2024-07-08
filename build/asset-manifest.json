@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/aparnakagini/visit-bali/static/css/main.99461c88.css",
-    "main.js": "/aparnakagini/visit-bali/static/js/main.a8aebd51.js",
-    "static/js/453.1106b2a3.chunk.js": "/aparnakagini/visit-bali/static/js/453.1106b2a3.chunk.js",
-    "index.html": "/aparnakagini/visit-bali/index.html",
-    "main.99461c88.css.map": "/aparnakagini/visit-bali/static/css/main.99461c88.css.map",
-    "main.a8aebd51.js.map": "/aparnakagini/visit-bali/static/js/main.a8aebd51.js.map",
-    "453.1106b2a3.chunk.js.map": "/aparnakagini/visit-bali/static/js/453.1106b2a3.chunk.js.map"
+    "main.css": "/visit-bali/static/css/main.99461c88.css",
+    "main.js": "/visit-bali/static/js/main.06fca9ce.js",
+    "static/js/453.1106b2a3.chunk.js": "/visit-bali/static/js/453.1106b2a3.chunk.js",
+    "index.html": "/visit-bali/index.html",
+    "main.99461c88.css.map": "/visit-bali/static/css/main.99461c88.css.map",
+    "main.06fca9ce.js.map": "/visit-bali/static/js/main.06fca9ce.js.map",
+    "453.1106b2a3.chunk.js.map": "/visit-bali/static/js/453.1106b2a3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.99461c88.css",
-    "static/js/main.a8aebd51.js"
+    "static/js/main.06fca9ce.js"
   ]
 }
