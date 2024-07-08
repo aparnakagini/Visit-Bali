@@ -1,7 +1,7 @@
 {
   "name": "visit-bali",
   "version": "0.1.0",
-  "homepage": "https://github.com/aparnakagini/visit-bali",
+  "homepage": "https://aparnakagini.github.io/visit-bali",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
