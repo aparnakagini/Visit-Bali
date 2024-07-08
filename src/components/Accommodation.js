@@ -25,7 +25,7 @@ const Accommodation = () => {
         <div>
             <div className="accommodation">
                 <header className="accommodation-header">
-                    <img src="accommodation.jpg" alt="Travel Packages" className="header-image" />
+                    <img src={process.env.PUBLIC_URL + '/accommodation.jpg'} alt="Travel Packages" className="header-image" />
                     <h1>Travel Packages</h1>
                 </header>
                 <section className="package-booking">
@@ -39,7 +39,7 @@ const Accommodation = () => {
                                 className={`package-card ${selectedPackage === 'couples' ? 'selected' : ''}`}
                                 onClick={() => handlePackageClick('couples')}
                             >
-                                <img src="couple-package.jpg" alt="Couples Package" />
+                                <img src={process.env.PUBLIC_URL + '/couple-package.jpg'} alt="Couples Package" />
                                 <h4>Bali Tour Package for Couples - 5 Nights</h4>
                                 <p className="price">C$520</p>
                             </div>
@@ -47,7 +47,7 @@ const Accommodation = () => {
                                 className={`package-card ${selectedPackage === 'families' ? 'selected' : ''}`}
                                 onClick={() => handlePackageClick('families')}
                             >
-                                <img src="bali-family.webp" alt="Families Package" />
+                                <img src={process.env.PUBLIC_URL + '/bali-family.webp'} alt="Families Package" />
                                 <h4>Bali Tour Package for Families - 7 Nights</h4>
                                 <p className="price">C$730</p>
                             </div>
@@ -55,7 +55,7 @@ const Accommodation = () => {
                                 className={`package-card ${selectedPackage === 'honeymoon' ? 'selected' : ''}`}
                                 onClick={() => handlePackageClick('honeymoon')}
                             >
-                                <img src="honeymoon.jpg" alt="Honeymoon Package" />
+                                <img src={process.env.PUBLIC_URL + '/honeymoon.jpg'} alt="Honeymoon Package" />
                                 <h4>Bali Honeymoon Package - 7 Nights</h4>
                                 <p className="price">C$1,030</p>
                             </div>

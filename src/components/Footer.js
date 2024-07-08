@@ -14,7 +14,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-center">
-                    <img src="bali-logo.png" alt="Bali Tourism" className="footer-logo" />
+                    <img src={process.env.PUBLIC_URL + '/bali-logo.png'}alt="Bali Tourism" className="footer-logo" />
                 </div>
                 <div className="footer-right">
                     <p>Contact Us</p>

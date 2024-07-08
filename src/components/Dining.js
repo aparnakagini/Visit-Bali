@@ -5,7 +5,7 @@ const Dining = () => {
     return (
         <div className="dining-page">
             <header className="dining-header">
-                <img src="dining.jpg" alt="Dining" className="dining-image" />
+                <img src={process.env.PUBLIC_URL + '/dining.jpg'}alt="Dining" className="dining-image" />
                 <h1 className="dining-title">Dining</h1>
             </header>
             <section className="dining-intro">
@@ -59,15 +59,15 @@ const Dining = () => {
                 <h3>Results</h3>
                 <div className="restaurant-cards">
                     <div className="restaurant-card">
-                        <img src="restaurant1.jpg" alt="Restaurant 1" />
+                        <img src={process.env.PUBLIC_URL + '/restaurant1.jpg'} alt="Restaurant 1" />
                         <h4>Sorrento Restaurant</h4>
                     </div>
                     <div className="restaurant-card">
-                        <img src="restaurant2.jpg" alt="Restaurant 2" />
+                        <img src={process.env.PUBLIC_URL + '/restaurant2.jpg'} alt="Restaurant 2" />
                         <h4>Limestones Eatery & Restaurant</h4>
                     </div>
                     <div className="restaurant-card">
-                        <img src="restaurant3.jpg" alt="Restaurant 3" />
+                        <img src={process.env.PUBLIC_URL + '/restaurant3.jpg'} alt="Restaurant 3" />
                         <h4>Arcadia Restaurant</h4>
                     </div>
                 </div>

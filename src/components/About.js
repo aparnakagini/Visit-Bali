@@ -13,7 +13,7 @@ const About = () => {
                     <p>Whether you seek adventure, relaxation, or cultural enrichment, Bali promises an unforgettable journey that will leave you enchanted and inspired.</p>
                 </div>
                 <div className="bali-info">
-                    <img src={'${process.env.PUBLIC_URL}/map.jpg'} alt="Bali On The Map" />
+                    <img src={process.env.PUBLIC_URL + '/map.jpg'} alt="Bali On The Map" />
                 </div>
             </div>
         </section>

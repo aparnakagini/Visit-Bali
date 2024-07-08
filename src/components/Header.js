@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className="logo">
-                <img src="/bali-logo.png" alt="Bali Tourism Logo" />
+                <img src={process.env.PUBLIC_URL + '/bali-logo.png'} alt="Bali Tourism Logo" />
             </div>
             <nav>
                 <ul>
