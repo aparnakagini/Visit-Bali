@@ -1,0 +1,93 @@
+.dining-page {
+    font-family: 'Ibarra Real Nova', serif; /* Apply the font */
+    color: #333;
+  }
+  
+  .dining-header {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .dining-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .dining-title {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    font-family: 'Sansita Swashed', cursive; /* Apply Sansita Swashed font */
+    font-weight: bold; /* Make the font bold */
+    color: #333; /* Change the color to grey */
+  }
+  
+  .dining-intro {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .dining-intro h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+  
+  .filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .filter label {
+    margin-bottom: 5px;
+  }
+  
+  .filter select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .dining-options {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .dining-options h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+  
+  .restaurant-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .restaurant-card {
+    width: 300px;
+    text-align: center;
+  }
+  
+  .restaurant-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .restaurant-card h4 {
+    margin: 10px 0;
+  }
+  

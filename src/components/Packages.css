@@ -1,0 +1,76 @@
+.packages {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.packages h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: 'Ibarra Real Nova', serif; /* Ensure font is imported */
+
+}
+
+.package-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.package-item {
+    background-color: #B9EEFF; /* Light blue background */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center; /* Center align text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    margin: 20px; /* Add margin for spacing */
+    font-family: 'Ibarra Real Nova', serif; /* Ensure font is imported */
+}
+
+.package-item .price {
+    font-size: 2rem; /* Larger font size for price */
+    color: #ff4500; /* Red color for price */
+    margin-top: 10px; /* Add margin */
+}
+
+.package-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.package-item h3 {
+    font-size: 1.5rem; /* Increase font size */
+    margin-top: 20px; /* Increase margin */
+}
+
+.package-item p {
+    font-size: 1.2rem; /* Increase font size */
+    color: #333;
+    margin-top: 10px; /* Add margin */
+}
+
+.package-item .price {
+    font-size: 2rem; /* Larger font size for price */
+    color: #EB4335; /* Red color for price */
+    margin-top: 10px; /* Add margin */
+}
+
+.browse-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: black;
+    background-color: #B9EEFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from link */
+    margin-top: 20px; /* Add margin for spacing */
+}
+
+.browse-more-btn:hover {
+    background-color: #3c5d80; /* Darken button color on hover */
+}
