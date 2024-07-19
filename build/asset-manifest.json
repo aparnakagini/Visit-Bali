@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/visit-bali/static/css/main.99461c88.css",
-    "main.js": "/visit-bali/static/js/main.bb248f08.js",
+    "main.js": "/visit-bali/static/js/main.666f8c05.js",
     "static/js/453.1106b2a3.chunk.js": "/visit-bali/static/js/453.1106b2a3.chunk.js",
     "index.html": "/visit-bali/index.html",
     "main.99461c88.css.map": "/visit-bali/static/css/main.99461c88.css.map",
-    "main.bb248f08.js.map": "/visit-bali/static/js/main.bb248f08.js.map",
+    "main.666f8c05.js.map": "/visit-bali/static/js/main.666f8c05.js.map",
     "453.1106b2a3.chunk.js.map": "/visit-bali/static/js/453.1106b2a3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.99461c88.css",
-    "static/js/main.bb248f08.js"
+    "static/js/main.666f8c05.js"
   ]
 }
