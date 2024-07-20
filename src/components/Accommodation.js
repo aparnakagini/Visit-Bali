@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import './Accommodation.css';
-import Timer from './Timer';
 import { useNavigate } from 'react-router-dom';
 
 const Accommodation = () => {
     const [selectedPackage, setSelectedPackage] = useState(null);
-    const [startTimer, setStartTimer] = useState(false);
-    const [numTravelers, setNumTravelers] = useState(1); // State for number of travelers
+    const [numTravelers, setNumTravelers] = useState(1);
+    const [showPopup, setShowPopup] = useState(false); // State to show/hide popup
 
     const handlePackageClick = (packageName) => {
-        setSelectedPackage(packageName);
-        setStartTimer(true);
+        if (selectedPackage === packageName) {
+            setSelectedPackage(null);
+            setShowPopup(false); // Hide popup if same package is clicked again
+        } else {
+            setSelectedPackage(packageName);
+            setShowPopup(true); // Show popup when package is selected
+        }
     };
 
     useEffect(() => {
@@ -19,7 +23,7 @@ const Accommodation = () => {
 
     const navigate = useNavigate();
     const handleBookNow = () => {
-        navigate('/confirmation');
+        navigate('/booking-details');
     };
 
     const scrollLeft = () => {
@@ -31,11 +35,54 @@ const Accommodation = () => {
     };
 
     const handleIncrement = () => {
-        setNumTravelers(prev => Math.min(prev + 1, 10)); // Maximum 10 travelers
+        setNumTravelers(prev => Math.min(prev + 1, 10));
     };
 
     const handleDecrement = () => {
-        setNumTravelers(prev => Math.max(prev - 1, 1)); // Minimum 1 traveler
+        setNumTravelers(prev => Math.max(prev - 1, 1));
+    };
+
+    const handleClosePopup = () => {
+        setShowPopup(false);
+    };
+
+    const packageDetails = {
+        couples: {
+            title: 'Bali Tour Package for Couples - 5 Nights',
+            price: 'C$520',
+            description: 'Enjoy a romantic getaway with our Bali Couples Package. Includes accommodation, sightseeing, and meals.',
+            image: '/couple-package.jpg'
+        },
+        families: {
+            title: 'Bali Tour Package for Families - 7 Nights',
+            price: 'C$730',
+            description: 'Have a fun family vacation with our Bali Families Package. Includes accommodation, sightseeing, and meals.',
+            image: '/bali-family.webp'
+        },
+        honeymoon: {
+            title: 'Bali Honeymoon Package - 7 Nights',
+            price: 'C$1,030',
+            description: 'Celebrate your love with our Bali Honeymoon Package. Includes accommodation, sightseeing, and meals.',
+            image: '/honeymoon.jpg'
+        },
+        adventure: {
+            title: 'Bali Adventure Package - 5 Nights',
+            price: 'C$850',
+            description: 'Get your adrenaline pumping with our Bali Adventure Package. Includes accommodation, sightseeing, and meals.',
+            image: '/adventure.jpg'
+        },
+        luxury: {
+            title: 'Bali Luxury Package - 7 Nights',
+            price: 'C$1,500',
+            description: 'Experience luxury like never before with our Bali Luxury Package. Includes accommodation, sightseeing, and meals.',
+            image: '/luxury.jpg'
+        },
+        spa: {
+            title: 'Bali Spa Package - 5 Nights',
+            price: 'C$700',
+            description: 'Relax and rejuvenate with our Bali Spa Package. Includes accommodation, sightseeing, and meals.',
+            image: '/spa.jpg'
+        },
     };
 
     return (
@@ -65,82 +112,38 @@ const Accommodation = () => {
                     <div className="step">
                         <h3>Step 3: Select Your Travel Package</h3>
                         <p><strong>What’s Included:</strong> Accommodation, Sightseeing, Meals</p>
-                        {startTimer && <Timer initialMinutes={15} initialSeconds={0} />}
                         <div className="package-cards-container">
                             <button className="scroll-btn left" onClick={scrollLeft}>{"<"}</button>
                             <div id="package-scroll" className="package-cards">
-                                <div
-                                    className={`package-card ${selectedPackage === 'couples' ? 'selected' : ''}`}
-                                    onClick={() => handlePackageClick('couples')}
-                                >
-                                    <img src={process.env.PUBLIC_URL + '/couple-package.jpg'} alt="Couples Package" />
-                                    <h4>Bali Tour Package for Couples - 5 Nights</h4>
-                                    <p className="price">C$520</p>
-                                </div>
-                                <div
-                                    className={`package-card ${selectedPackage === 'families' ? 'selected' : ''}`}
-                                    onClick={() => handlePackageClick('families')}
-                                >
-                                    <img src={process.env.PUBLIC_URL + '/bali-family.webp'} alt="Families Package" />
-                                    <h4>Bali Tour Package for Families - 7 Nights</h4>
-                                    <p className="price">C$730</p>
-                                </div>
-                                <div
-                                    className={`package-card ${selectedPackage === 'honeymoon' ? 'selected' : ''}`}
-                                    onClick={() => handlePackageClick('honeymoon')}
-                                >
-                                    <img src={process.env.PUBLIC_URL + '/honeymoon.jpg'} alt="Honeymoon Package" />
-                                    <h4>Bali Honeymoon Package - 7 Nights</h4>
-                                    <p className="price">C$1,030</p>
-                                </div>
-                                <div
-                                    className={`package-card ${selectedPackage === 'adventure' ? 'selected' : ''}`}
-                                    onClick={() => handlePackageClick('adventure')}
-                                >
-                                    <img src={process.env.PUBLIC_URL + '/adventure.jpg'} alt="Adventure Package" />
-                                    <h4>Bali Adventure Package - 5 Nights</h4>
-                                    <p className="price">C$850</p>
-                                </div>
-                                <div
-                                    className={`package-card ${selectedPackage === 'luxury' ? 'selected' : ''}`}
-                                    onClick={() => handlePackageClick('luxury')}
-                                >
-                                    <img src={process.env.PUBLIC_URL + '/luxury.jpg'} alt="Luxury Package" />
-                                    <h4>Bali Luxury Package - 7 Nights</h4>
-                                    <p className="price">C$1,500</p>
-                                </div>
-                                <div
-                                    className={`package-card ${selectedPackage === 'spa' ? 'selected' : ''}`}
-                                    onClick={() => handlePackageClick('spa')}
-                                >
-                                    <img src={process.env.PUBLIC_URL + '/spa.jpg'} alt="Spa Package" />
-                                    <h4>Bali Spa Package - 5 Nights</h4>
-                                    <p className="price">C$700</p>
-                                </div>
+                                {Object.keys(packageDetails).map((key) => (
+                                    <div
+                                        key={key}
+                                        className={`package-card ${selectedPackage === key ? 'selected' : ''}`}
+                                        onClick={() => handlePackageClick(key)}
+                                    >
+                                        <img src={process.env.PUBLIC_URL + packageDetails[key].image} alt={`${packageDetails[key].title}`} />
+                                        <h4>{packageDetails[key].title}</h4>
+                                        <p className="price">{packageDetails[key].price}</p>
+                                    </div>
+                                ))}
                             </div>
                             <button className="scroll-btn right" onClick={scrollRight}>{">"}</button>
                         </div>
                     </div>
-                    <div className="step">
-                        <div className="personal-details">
-                            <h3 className="center-title">Step 3: Enter Your Personal Details</h3>
-                            <input type="text" placeholder="Full Name" />
-                            <input type="email" placeholder="Email" />
-                            <input type="tel" placeholder="Phone Number" />
-                            <input type="text" placeholder="Address" />
-                            <div className="payment-info">
-                                <label className="payment-label">-- Payment --</label>
-                                <div className="payment-inputs">
-                                    <input type="text" placeholder="Card Number" />
-                                    <input type="text" placeholder="Expiry Date" />
-                                    <input type="text" placeholder="CVC" />
-                                </div>
-                                <button className="book-now" onClick={handleBookNow}>BOOK NOW</button>
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </div>
+            {showPopup && selectedPackage && (
+                <div className="popup">
+                    <div className="popup-content">
+                        <button className="close-btn" onClick={handleClosePopup}>X</button>
+                        <h2>{packageDetails[selectedPackage].title}</h2>
+                        <img src={process.env.PUBLIC_URL + packageDetails[selectedPackage].image} alt={`${packageDetails[selectedPackage].title}`} className="popup-image" />
+                        <p>{packageDetails[selectedPackage].description}</p>
+                        <p className="price">{packageDetails[selectedPackage].price}</p>
+                        <button className="book-this-package" onClick={handleBookNow}>Book This Package</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

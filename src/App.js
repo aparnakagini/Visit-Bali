@@ -10,6 +10,7 @@ import Attractions from './components/Attractions';
 import Accommodation from './components/Accommodation';
 import Dining from './components/Dining';
 import Confirmation from './components/Confirmation';
+import BookingDetails from './components/BookingDetails'; // Import the BookingDetails component
 import './App.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/accommodation" element={<Accommodation />} />
           <Route path="/dining" element={<Dining />} />
           <Route path="/confirmation" element={<Confirmation />} />
+          <Route path="/booking-details" element={<BookingDetails />} />
         </Routes>
         <Footer />
       </div>
