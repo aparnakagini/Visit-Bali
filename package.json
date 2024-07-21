@@ -22,10 +22,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^1.0.0"
+
+  "dependencies": {
+  "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   },
+
 
   "eslintConfig": {
     "extends": [
