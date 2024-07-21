@@ -16,7 +16,6 @@ const Confirmation = () => {
         <div className="confirmation-page">
             <h1>Reservation Confirmed!</h1>
             <p>Thank you for choosing Visit Bali.com - We have sent a confirmation email to you.</p>
-            <button onClick={() => window.location.href = '/'}>Go to Home</button>
 
             <div className="feedback-section">
                 <h2>We value your feedback!</h2>

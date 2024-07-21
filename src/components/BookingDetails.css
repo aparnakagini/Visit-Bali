@@ -62,3 +62,27 @@
     margin-top: -10px;
     margin-bottom: 10px;
 }
+
+
+.payment-inputs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.payment-inputs input {
+    flex: 1;
+    min-width: 120px;
+    margin-right: 10px;
+}
+
+.payment-inputs input:last-child {
+    margin-right: 0;
+}
+
+.payment-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}

@@ -1,3 +1,6 @@
+/* Ensure the font is imported */
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;700&display=swap');
+
 .packages {
     padding: 50px 20px;
     text-align: center;
@@ -6,22 +9,14 @@
 .packages h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    font-family: 'Ibarra Real Nova', serif; /* Ensure font is imported */
+    font-family: 'Ibarra Real Nova', serif;
 }
 
 .package-list {
     display: flex;
-    overflow-x: auto;
+    justify-content: center; /* Center the package list */
     gap: 20px;
     padding: 20px 0;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-}
-
-.package-list::-webkit-scrollbar {
-    display: none;  /* Hide scrollbar for Chrome, Safari and Opera */
 }
 
 .package-item {
@@ -29,40 +24,33 @@
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
-    min-width: 300px;
+    width: 300px;
     text-align: center; /* Center align text */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
-    font-family: 'Ibarra Real Nova', serif; /* Ensure font is imported */
-    scroll-snap-align: center;
-}
-
-.package-item .price {
-    font-size: 2rem; /* Larger font size for price */
-    color: #ff4500; /* Red color for price */
-    margin-top: 10px; /* Add margin */
+    font-family: 'Ibarra Real Nova', serif;
 }
 
 .package-item img {
-    max-width: 100%;
+    width: 100%; /* Make images the same size */
     height: auto;
     border-radius: 10px;
 }
 
 .package-item h3 {
-    font-size: 1.5rem; /* Increase font size */
-    margin-top: 20px; /* Increase margin */
+    font-size: 1.5rem;
+    margin-top: 20px;
 }
 
 .package-item p {
-    font-size: 1.2rem; /* Increase font size */
+    font-size: 1.2rem;
     color: #333;
-    margin-top: 10px; /* Add margin */
+    margin-top: 10px;
 }
 
 .package-item .price {
-    font-size: 2rem; /* Larger font size for price */
-    color: #EB4335; /* Red color for price */
-    margin-top: 10px; /* Add margin */
+    font-size: 2rem;
+    color: #EB4335;
+    margin-top: 10px;
 }
 
 .browse-more-btn {
@@ -74,8 +62,8 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none; /* Remove underline from link */
-    margin-top: 20px; /* Add margin for spacing */
+    text-decoration: none;
+    margin-top: 20px;
 }
 
 .browse-more-btn:hover {

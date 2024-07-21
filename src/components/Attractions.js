@@ -45,7 +45,6 @@ const Attractions = () => {
                             <p>Sekumpul Waterfall is a magnificent natural wonder, featuring a collection of seven waterfalls surrounded by lush jungle. This breathtaking spot is renowned for its scenic beauty and offers a serene and refreshing experience for those willing to embark on the adventurous trek to reach it.</p>
                         </div>
                     </div>
-                    <button className="explore-more">Explore More Attractions →</button>
                 </section>
             </div>
         </div>

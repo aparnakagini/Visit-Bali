@@ -7,7 +7,7 @@ const BookingDetails = () => {
     const location = useLocation();
     const navigate = useNavigate();
     
-    // State for form fields and errors
+    const [language, setLanguage] = useState('en'); // Language state
     const [form, setForm] = useState({
         fullName: '',
         email: '',
@@ -25,15 +25,12 @@ const BookingDetails = () => {
         setForm({ ...form, [name]: value });
     };
 
-    // Validate form fields
+    // Validate form fields (excluding payment information)
     const validate = () => {
         let tempErrors = {};
-        tempErrors.fullName = /^[a-zA-Z\s]+$/.test(form.fullName) ? '' : 'Le nom ne doit contenir que des lettres';
-        tempErrors.email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) ? '' : 'L\'email n\'est pas valide';
-        tempErrors.phoneNumber = form.phoneNumber.length >= 10 ? '' : 'Le numéro de téléphone n\'est pas valide';
-        tempErrors.cardNumber = form.cardNumber.length === 16 ? '' : 'Le numéro de carte n\'est pas valide';
-        tempErrors.expiryDate = /^\d{2}\/\d{2}$/.test(form.expiryDate) ? '' : 'La date d\'expiration n\'est pas valide';
-        tempErrors.cvc = form.cvc.length === 3 ? '' : 'Le CVC n\'est pas valide';
+        tempErrors.fullName = /^[a-zA-Z\s]+$/.test(form.fullName) ? '' : language === 'en' ? 'Name must contain only letters' : 'Le nom ne doit contenir que des lettres';
+        tempErrors.email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) ? '' : language === 'en' ? 'Email is not valid' : 'L\'email n\'est pas valide';
+        tempErrors.phoneNumber = form.phoneNumber.length >= 10 ? '' : language === 'en' ? 'Phone number is not valid' : 'Le numéro de téléphone n\'est pas valide';
         setErrors(tempErrors);
 
         return Object.values(tempErrors).every(x => x === '');
@@ -48,13 +45,16 @@ const BookingDetails = () => {
     return (
         <div className="booking-details">
             <Timer initialMinutes={15} initialSeconds={0} /> {/* Add the Timer component here */}
-            <h2>Étape 4 : Entrez vos informations personnelles et de paiement</h2>
+            <button onClick={() => setLanguage(language === 'en' ? 'fr' : 'en')}>
+                {language === 'en' ? 'French' : 'English'}
+            </button>
+            <h2>{language === 'en' ? 'Step 4: Enter Your Personal and Payment Information' : 'Étape 4 : Entrez vos informations personnelles et de paiement'}</h2>
             <div className="step">
                 <div className="personal-details">
                     <input 
                         type="text" 
                         name="fullName" 
-                        placeholder="Nom complet" 
+                        placeholder={language === 'en' ? 'Full Name' : 'Nom complet'} 
                         value={form.fullName}
                         onChange={handleChange}
                     />
@@ -70,7 +70,7 @@ const BookingDetails = () => {
                     <input 
                         type="tel" 
                         name="phoneNumber" 
-                        placeholder="Numéro de téléphone" 
+                        placeholder={language === 'en' ? 'Phone Number' : 'Numéro de téléphone'} 
                         value={form.phoneNumber}
                         onChange={handleChange}
                     />
@@ -78,29 +78,33 @@ const BookingDetails = () => {
                     <input 
                         type="text" 
                         name="address" 
-                        placeholder="Adresse" 
+                        placeholder={language === 'en' ? 'Address' : 'Adresse'} 
                         value={form.address}
                         onChange={handleChange}
                     />
-                    <div className="payment-info">
-                        <label className="payment-label">-- Paiement --</label>
-                        <div className="payment-inputs">
+                </div>
+                <div className="payment-info">
+                    <label className="payment-label">{language === 'en' ? '-- Payment --' : '-- Paiement --'}</label>
+                    <div className="payment-inputs">
+                        <div className="payment-input-container">
                             <input 
                                 type="text" 
                                 name="cardNumber" 
-                                placeholder="Numéro de carte" 
+                                placeholder={language === 'en' ? 'Card Number' : 'Numéro de carte'} 
                                 value={form.cardNumber}
                                 onChange={handleChange}
                             />
-                            {errors.cardNumber && <span className="error">{errors.cardNumber}</span>}
+                        </div>
+                        <div className="payment-input-container">
                             <input 
                                 type="text" 
                                 name="expiryDate" 
-                                placeholder="Date d'expiration (MM/AA)" 
+                                placeholder={language === 'en' ? 'Expiry Date (MM/YY)' : 'Date d\'expiration (MM/AA)'} 
                                 value={form.expiryDate}
                                 onChange={handleChange}
                             />
-                            {errors.expiryDate && <span className="error">{errors.expiryDate}</span>}
+                        </div>
+                        <div className="payment-input-container">
                             <input 
                                 type="text" 
                                 name="cvc" 
@@ -108,12 +112,11 @@ const BookingDetails = () => {
                                 value={form.cvc}
                                 onChange={handleChange}
                             />
-                            {errors.cvc && <span className="error">{errors.cvc}</span>}
                         </div>
                     </div>
                 </div>
             </div>
-            <button className="confirm-booking" onClick={handleConfirmBooking}>Confirmer la réservation</button>
+            <button className="confirm-booking" onClick={handleConfirmBooking}>{language === 'en' ? 'Confirm Booking' : 'Confirmer la réservation'}</button>
         </div>
     );
 }
