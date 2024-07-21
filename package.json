@@ -4,15 +4,9 @@
   "homepage": "https://aparnakagini.github.io/visit-bali",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "gh-pages": "^6.1.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.24.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "react-router-dom": "^6.25.1",
+    "web-vitals": "^4.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -22,12 +16,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-
-  "dependencies": {
-  "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  },
-
-
   "eslintConfig": {
     "extends": [
       "react-app",
